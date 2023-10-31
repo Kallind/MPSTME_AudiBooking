@@ -1,0 +1,43 @@
+/* Set Corrlata Font */
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Corrlata', sans-serif;
+  }
+  
+  /* Add background gradient */
+  .bg-gradient {
+    background: linear-gradient(90deg, #80fff2, rgb(100, 204, 197));
+  }
+  
+  .bg-primary {
+    background-color: #04364A !important;
+  }
+  
+  .btn-secondary {
+    background-color: #176B87;
+    border-color: #176B87;
+  }
+  
+  .card {
+    background-color: #64CCC5;
+  }
+  
+  .card-body {
+    color: #DAFFFB;
+  }
+  
+  /* Custom Styles */
+  .navbar-custom {
+    background-color: #C06C84;
+}
+.card-header-custom {
+    background-color: #F8B195;
+    color: white;
+}
+.card-body-custom {
+    background-color: #F67280;
+    color: #355C7D;
+}
+.btn-custom {
+    background-color: #6C5B7B;
+    color: white;
+}
