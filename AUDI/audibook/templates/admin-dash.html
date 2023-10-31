@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Color Palette */
+        .bg-primary {
+            background-color: #4682A9 !important;
+        }
+        .navbar-dark .navbar-brand, .seat-label {
+            color: #F6F4EB !important;
+        }
+        body {
+            background-color: #F6F4EB !important;
+        }
+        h1, h3 {
+            color: #4682A9 !important;
+        }
+        .form-control, #manage-bookings li {
+            background-color: #749BC2 !important;
+            color: #F6F4EB !important;
+        }
+        #manage-bookings li {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+    </style>
+    <title>Admin Dashboard Page</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-center">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Back</a>
+      <a class="navbar-brand mx-auto" href="#">Auditorium Booking System</a>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h1 class="text-center">Admin Dashboard</h1>
+
+    <!-- System Statistics -->
+    <div class="mt-4">
+      <h3>System Statistics</h3>
+      <div>Total Auditorium Bookings: {{ total_auditorium_bookings }}</div>
+      <div>Total Seat Bookings: {{ total_seat_bookings }}</div>
+    </div>
+
+    <!-- Manage Bookings -->
+    <div class="mt-4">
+      <h3>Manage Auditorium Bookings</h3>
+      <ul id="manage-bookings">
+        {% for booking in auditorium_bookings %}
+          <li>Booking #{{ forloop.counter }} ({{ booking.event_name }}) - Expected Attendees: {{ booking.expected_attendees }}</li>
+        {% endfor %}
+      </ul>
+
+      <h3>Manage Seat Bookings</h3>
+      <ul id="manage-bookings">
+        {% for seat in seat_bookings %}
+          <li>Seat #{{ seat.seat_row }}-{{ seat.seat_column }} ({{ seat.attendee_name }}) - Contact: {{ seat.contact_info }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
