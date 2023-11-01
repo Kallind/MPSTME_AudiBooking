@@ -28,30 +28,31 @@
 
 
     </style>
-    <title>Auditorium Booking System</title>
+    <title>MPSTME Auditorium Booking</title>
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between">
     <div class="container">
-      <a class="navbar-brand" href="#">Auditorium Booking System</a>
-      <a class="navbar-brand" href="admin-dash.html" style="margin-left: auto;">Admin Dashboard</a>
+      <a class="navbar-brand" href="#">MPSTME Auditorium Booking</a>
+      <a class="navbar-brand" href="{% url 'admin_dashboard' %}" style="margin-left: auto;">Admin Dashboard</a>
     </div>
   </nav>
 
-
+  {% load static %}
 
   <div class="container mt-5">
-    <h1 class="text-center">Welcome to the Auditorium Booking System</h1>
+    <h1 class="text-center"> MPSTME Auditorium Booking</h1>
+    
 
-    <img src="file.jpg" class="img-fluid mx-auto d-block mb-4 w-50" alt="Welcome Image">
+    <img src="{%static 'auditorium.jpg' %}" class="img-fluid mx-auto d-block mb-4 w-50" alt="Welcome Image">
     <div class="row mt-4">
       <div class="col-md-6">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Auditorium Booking</h5>
             <p class="card-text">Book the auditorium for specific dates and times.</p>
-            <a href="auditorium_booking.html" class="btn btn-secondary">Book Now</a>
+            <a href="{% url 'book_auditorium' %}" class="btn btn-secondary">Book Now</a>
           </div>
         </div>
       </div>
@@ -60,7 +61,7 @@
           <div class="card-body">
             <h5 class="card-title">Seat Booking</h5>
             <p class="card-text">Reserve individual seats for an upcoming event.</p>
-            <a href="seat-booking.html" class="btn btn-secondary">Reserve Seats</a>
+            <a href="{% url 'book_seat' %}" class="btn btn-secondary">Reserve Seats</a>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import AuditoriumEventForm
 
@@ -6,7 +7,7 @@ def book_auditorium(request):
         form = AuditoriumEventForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success_page')
+            return render(request,"success.html")
     else:
         form = AuditoriumEventForm()
 
@@ -22,11 +23,11 @@ def book_seat(request):
             seat = form.save(commit=False)
             seat.is_booked = True
             seat.save()
-            return redirect('seat_success_page')  # Replace with the URL of your success page
+            return render(request,"success.html")  # Replace with the URL of your success page
     else:
         form = SeatBookingForm()
 
-    return render(request, 'seat_booking.html', {'form': form})
+    return render(request, 'seat-booking.html', {'form': form})
 
 from django.shortcuts import render
 from .models import AuditoriumEvent, SeatBooking
@@ -46,3 +47,9 @@ def admin_dashboard(request):
     }
 
     return render(request, 'admin-dash.html', context)
+
+def index(request):
+    return render(request,"index.html")
+
+def success(request):
+    return render(request,"success.html")

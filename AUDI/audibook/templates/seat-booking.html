@@ -40,13 +40,19 @@
             grid-template-columns: repeat(10, 1fr);
         }
     </style>
+    <script>
+       function goBack() {
+            window.history.back();
+        }
+
+    </script>
     <title>Seat Booking Page</title>
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-center">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Back</a>
+      <a class="navbar-brand" onclick="goBack()"><button>Back</button></a>
       <a class="navbar-brand mx-auto" href="#">Auditorium Booking System</a>
     </div>
   </nav>
