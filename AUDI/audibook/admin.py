@@ -7,4 +7,4 @@ class AuditoriumEventAdmin(admin.ModelAdmin):
 
 @admin.register(SeatBooking)  # Register the SeatBooking model
 class SeatBookingAdmin(admin.ModelAdmin):
-    list_display = ['seat_row', 'seat_column', 'attendee_name', 'is_booked']
+    list_display = ['event', 'seat_row', 'seat_column', 'attendee_name', 'is_booked']

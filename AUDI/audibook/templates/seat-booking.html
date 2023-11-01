@@ -44,7 +44,6 @@
        function goBack() {
             window.history.back();
         }
-
     </script>
     <title>Seat Booking Page</title>
 </head>
@@ -74,9 +73,13 @@
       <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-secondary">Confirm Seat Booking</button>
-    </form>
-    
+        <input type="hidden" id="selected_row" name="seat_row" value="">
+        <input type="hidden" id="selected_column" name="seat_column" value="">
+        
+        <!-- Other form fields can go here -->
+        
+        <button type="submit" class="btn btn-primary">Book Seat</button>
+      </form>
     </div>
 
     <!-- Confirmation Message -->
@@ -99,6 +102,8 @@
         seat.textContent = row + '-' + col;
         seat.addEventListener('click', function() {
           this.classList.toggle('selected');
+          document.getElementById('selected_row').value = this.classList.contains('selected') ? row : '';
+          document.getElementById('selected_column').value = this.classList.contains('selected') ? col : '';
         });
         seatMap.appendChild(seat);
       }

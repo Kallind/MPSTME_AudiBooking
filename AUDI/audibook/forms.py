@@ -22,10 +22,8 @@ from .models import SeatBooking
 class SeatBookingForm(forms.ModelForm):
     class Meta:
         model = SeatBooking
-        fields = ['seat_row', 'seat_column', 'attendee_name', 'contact_info']
+        fields = ['event', 'seat_row', 'seat_column', 'attendee_name', 'contact_info']
         widgets = {
-            'seat_row': forms.NumberInput(attrs={'class': 'form-control'}),
-            'seat_column': forms.NumberInput(attrs={'class': 'form-control'}),
             'attendee_name': forms.TextInput(attrs={'class': 'form-control'}),
             'contact_info': forms.TextInput(attrs={'class': 'form-control'}),
         }
