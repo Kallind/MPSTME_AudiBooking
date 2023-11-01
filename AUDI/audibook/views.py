@@ -17,15 +17,15 @@ from django.shortcuts import render, redirect
 from .forms import SeatBookingForm
 
 def book_seat(request):
-    if request.method == "POST":
+    if request.method == 'POST':
         form = SeatBookingForm(request.POST)
         if form.is_valid():
-            seat = form.save(commit=False)
-            seat.is_booked = True
-            seat.save()
-            return render(request,"success.html")  # Replace with the URL of your success page
+            form.save()
+            return redirect('sucess.html')  # Redirect to a success or summary page
     else:
         form = SeatBookingForm()
+
+    context = {'form': form}
 
     return render(request, 'seat-booking.html', {'form': form})
 
@@ -53,3 +53,6 @@ def index(request):
 
 def success(request):
     return render(request,"success.html")
+
+
+

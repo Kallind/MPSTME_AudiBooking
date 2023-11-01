@@ -65,7 +65,7 @@
       <h3>Manage Seat Bookings</h3>
       <ul id="manage-bookings">
         {% for seat in seat_bookings %}
-          <li>Seat #{{ seat.seat_row }}-{{ seat.seat_column }} ({{ seat.attendee_name }}) - Contact: {{ seat.contact_info }}</li>
+          <li>Seat #{{ seat.seat_row }}- for Event: {{ seat.event.event_name }} {{ seat.seat_column }} ({{ seat.attendee_name }}) - Contact: {{ seat.contact_info }}</li>
         {% endfor %}
       </ul>
     </div>
